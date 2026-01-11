@@ -1,18 +1,15 @@
 import SinglePostContent from "@/components/SinglePostContent";
 
-export default async function SinglePostPage({ params }: { params: { id: string } }) {
-  const {
-    post, authorProfile, comments,
-    commentsAuthors, myLike, myBookmark,
-  } = {
-    post: {},
-    authorProfile: {},
-    comments: [],
-    commentsAuthors: [],
-    myLike: {},
-    myBookmark: {},
+export default function SinglePostPage() {
+  const { post, authorProfile, comments, commentsAuthors, myLike, myBookmark } = {
+    post: {} as any,
+    authorProfile: {} as any,
+    comments: [] as any[],
+    commentsAuthors: [] as any[],
+    myLike: {} as any,
+    myBookmark: {} as any,
   };
-  // } = await getSinglePostData(params.id);
+
   return (
     <SinglePostContent
       post={post}

@@ -1,50 +1,28 @@
 'use client';
 import { Button, Switch, TextArea, TextField } from "@radix-ui/themes";
 import { CloudUploadIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 export default function SettingsForm({
   profile,
 }: {
   profile: any | null;
 }) {
-  const router = useRouter();
   const fileInRef = useRef<HTMLInputElement>(null);
-  const [file, setFile] = useState<File | null>(null);
-  const [avatarUrl, setAvatarUrl] = useState(profile?.avatar || null);
-  // useEffect(() => {
-  //   if (file) {
-  //     const data = new FormData();
-  //     data.set("file", file);
-  //     fetch("/api/upload", {
-  //       method: "POST",
-  //       body: data,
-  //     }).then(response => {
-  //       response.json().then(url => {
-  //         setAvatarUrl(url);
-  //       });
-  //     });
-  //   }
-  // }, [file]);
+
   return (
-    <form action={async (data: FormData) => {
-      // await updateProfile(data);
-      router.push('/profile');
-      router.refresh();
-    }}>
-      <input type="hidden" name="avatar" value={avatarUrl || ''} />
+    <form>
+      <input type="hidden" name="avatar" value={profile?.avatar || 'url'} />
       <div className="flex gap-4 items-center">
         <div>
           <div className="bg-gray-400 size-24 rounded-full overflow-hidden aspect-square shadow-md shadow-gray-400">
-            <img className="" src={avatarUrl || ''} alt="" />
+            <img className="" src={profile?.avatar || ''} alt="Image" />
           </div>
         </div>
         <div>
           <input type="file"
             ref={fileInRef}
             className="hidden"
-            onChange={ev => setFile(ev.target.files?.[0] || null)}
           />
           <Button
             type="button"

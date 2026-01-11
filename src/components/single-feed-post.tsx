@@ -6,7 +6,7 @@ type InstagramPostProps = {
     postId: number;
     username: string;
     avatar: string;
-    images: string[]; // ✅ multiple images
+    images: string[];
     caption: string;
     likes?: string | number;
     commentsCount?: number;
@@ -67,6 +67,7 @@ const InstagramPost: React.FC<InstagramPostProps> = ({
             if (showComments) fetchComments(postId); // Refresh comments list
             toast.success(replyTo ? "Reply added!" : "Comment added!");
         } catch (error) {
+            console.log(error);
             toast.error(replyTo ? "Failed to add reply." : "Failed to add comment.");
         } finally {
             setIsSubmittingComment(false);

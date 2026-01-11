@@ -24,7 +24,6 @@ export default function CreatePage() {
     register,
     handleSubmit,
     setValue,
-    watch,
     formState: { errors },
   } = useForm<CreatePostInput>({
     resolver: zodResolver(createPostSchema),

@@ -1,5 +1,4 @@
 "use client"
-import { useUserStore } from "@/store/useUserStore";
 import { CameraIcon, HomeIcon, LayoutGridIcon, SearchIcon, UserIcon } from "lucide-react";
 import Link from "next/link";
 import ProtectedByAuth from "./ProtectedByAuth";

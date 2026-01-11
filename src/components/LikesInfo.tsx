@@ -16,7 +16,7 @@ export default function LikesInfo({
   const [likedByMe, setLikedByMe] = useState(!!sessionLike);
   return (
     <form
-      action={async (data: FormData) => {
+      action={async () => {
         setLikedByMe(prev => !prev);
         if (likedByMe) {
           // remove like

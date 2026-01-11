@@ -1,11 +1,8 @@
 // src/components/ProtectedByAuth.tsx
 "use client";
-
-import LoginPage from "@/app/(routes)/login/page";
 import { useUserStore } from "@/store/useUserStore";
 import { useRouter } from "next/navigation";
-import { Suspense, useEffect } from "react";
-import Preloader from "./Preloader";
+import { useEffect } from "react";
 
 interface ProtectedByAuthProps {
     children: React.ReactNode;

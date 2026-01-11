@@ -2,7 +2,6 @@
 import { useUserStore } from "@/store/useUserStore";
 import { CameraIcon, HomeIcon, LayoutGridIcon, LogOutIcon, SearchIcon, UserIcon } from "lucide-react";
 import Link from "next/link";
-import ProtectedByAuth from "./ProtectedByAuth";
 import { Button } from "@radix-ui/themes";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
@@ -10,7 +9,7 @@ import { logout } from "@/api/internal/user.api";
 
 
 export default function DesktopNav() {
-    const { user, clearUser } = useUserStore();
+    const { clearUser } = useUserStore();
     const router = useRouter();
 
     const handleLogout = async () => {

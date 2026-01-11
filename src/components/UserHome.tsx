@@ -1,7 +1,7 @@
 import HomePosts from "@/components/HomePosts";
 import HomeTopRow from "@/components/HomeTopRow";
 
-export default async function UserHome({ session }: { session: any }) {
+export default async function UserHome({ }: { session: any }) {
   // const follows = await prisma.follower.findMany({
   //   where: {
   //     followingProfileEmail: session?.user?.email || '',

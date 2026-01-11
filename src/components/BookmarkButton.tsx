@@ -1,11 +1,7 @@
 'use client';
 import { BookmarkIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 
 export default function BookmarkButton({
-  post,
-  sessionBookmark,
 }: {
   post: any;
   sessionBookmark?: any | null;

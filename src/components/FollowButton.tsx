@@ -1,11 +1,9 @@
 'use client';
-import { Button } from "@radix-ui/themes";
-import { UserMinus2Icon, UserMinusIcon, UserPlusIcon } from "lucide-react";
+import { UserMinusIcon, UserPlusIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function FollowButton({
-  profileIdToFollow,
   ourFollow = null,
 }: {
   profileIdToFollow: string;

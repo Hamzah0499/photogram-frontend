@@ -1,20 +1,12 @@
 'use client';
 import Avatar from "@/components/Avatar";
 import { Button, TextArea } from "@radix-ui/themes";
-import { useRouter } from "next/navigation";
 import { useRef } from "react";
 
 export default function CommentForm({ avatar, postId }: { avatar: string; postId: string }) {
-  const router = useRouter();
   const areaRef = useRef<HTMLTextAreaElement>(null);
   return (
-    <form action={async data => {
-      if (areaRef.current) {
-        areaRef.current.value = '';
-      }
-      // await postComment(data);
-      router.refresh();
-    }}>
+    <form>
       <input type="hidden" name="postId" value={postId} />
       <div className="flex gap-2">
         <div>

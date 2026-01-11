@@ -2,7 +2,6 @@ import { Avatar } from "@radix-ui/themes";
 import { PlusIcon } from "lucide-react";
 
 export default async function HomeTopRow({
-  follows,
   profiles,
 }: {
   follows: any[],
@@ -19,7 +18,7 @@ export default async function HomeTopRow({
           <p className="text-center text-gray-400 text-sm">New Story</p>
         </div>
         {profiles.map(profile => (
-          <div className="w-24 flex flex-col justify-center items-center">
+          <div key={profile} className="w-24 flex flex-col justify-center items-center">
             <div>
               <div className="inline-block p-1 rounded-full bg-gradient-to-tr from-ig-orange to-ig-red">
                 <div className="inline-block p-0.5 bg-white dark:bg-black rounded-full">

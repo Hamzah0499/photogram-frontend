@@ -1,6 +1,6 @@
 import SinglePostContent from "@/components/SinglePostContent";
 
-export default async function ModalPostContent({ postId }: { postId: string }) {
+export default async function ModalPostContent({ }: { postId: string }) {
   const {
     post, authorProfile, comments,
     commentsAuthors, myLike, myBookmark,

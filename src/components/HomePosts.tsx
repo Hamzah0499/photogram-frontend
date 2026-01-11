@@ -1,11 +1,9 @@
 import BookmarkButton from "@/components/BookmarkButton";
 import LikesInfo from "@/components/LikesInfo";
 import { Avatar } from "@radix-ui/themes";
-import { BookmarkIcon } from "lucide-react";
 import Link from "next/link";
 
 export default async function HomePosts({
-  follows,
   profiles,
 }: {
   follows: any[],

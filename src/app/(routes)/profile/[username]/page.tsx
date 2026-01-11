@@ -3,7 +3,6 @@ import { getUserProfile } from "@/api/internal/user.api";
 import InstagramProfile from "@/components/InstagramProfile";
 import Preloader from "@/components/Preloader";
 import ProtectedByAuth from "@/components/ProtectedByAuth";
-import { useUserStore } from "@/store/useUserStore";
 import { usePostStore } from "@/store/usePostStore";
 import { User } from "@/types/user";
 import { useParams } from "next/navigation";
@@ -12,8 +11,7 @@ import toast from "react-hot-toast";
 
 export default function UserProfilePage() {
     const { username } = useParams();
-    const { user: currentUser } = useUserStore();
-    const { posts, fetchUserPosts, isLoading: postsLoading } = usePostStore();
+    const { posts, fetchUserPosts } = usePostStore();
     const [profile, setProfile] = useState<User | null>(null);
     const [profileLoading, setProfileLoading] = useState(true);
 

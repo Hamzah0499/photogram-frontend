@@ -3,7 +3,6 @@ import Comment from "@/components/Comment";
 import LikesInfo from "@/components/LikesInfo";
 import Preloader from "@/components/Preloader";
 import SessionCommentForm from "@/components/SessionCommentForm";
-import { BookmarkIcon } from "lucide-react";
 import { Suspense } from "react";
 
 export default function SinglePostContent({

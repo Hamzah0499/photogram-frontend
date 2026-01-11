@@ -1,6 +1,5 @@
 import { User } from "@/types/user";
 import { Post } from "@/types/post";
-import React, { useState } from "react";
 import { Dialog } from "@radix-ui/themes";
 import InstagramPost from "./single-feed-post";
 

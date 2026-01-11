@@ -11,7 +11,7 @@ export default function Home() {
   useEffect(() => {
     fetchFeed();
     console.log("posts: ", posts)
-  }, [fetchFeed]);
+  }, [fetchFeed, posts]);
 
   if (isLoading) {
     return (

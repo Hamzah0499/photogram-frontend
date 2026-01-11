@@ -1,5 +1,4 @@
 import Avatar from "@/components/Avatar";
-import { format, formatISO } from 'date-fns';
 
 export default function Comment({
   text,

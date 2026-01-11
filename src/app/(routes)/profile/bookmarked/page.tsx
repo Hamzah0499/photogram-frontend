@@ -9,7 +9,6 @@ export default async function BookmarkedPage() {
   if (!profile) {
     return redirect('/settings');
   }
-  const bookmarks = []
   const posts = [{}]
   return (
     <div>
