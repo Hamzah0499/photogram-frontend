@@ -1,31 +1,29 @@
-import axios from "axios"
+import axios from "axios";
 
 const axiosApi = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_BACKEND_API_URL,
-    headers: {
-        "Content-Type": "application/json",
-    },
-    withCredentials: true,
-})
-
-axiosApi.interceptors.request.use((config: any) => {
-    if (config.data instanceof FormData) {
-        delete config.headers["Content-Type"];
-        return config;
-    }
-
-    config.headers["Content-Type"] = "application/json";
-    return config;
+  baseURL:
+    "https://photogram-backend-e2e5hec9a6frc6en.germanywestcentral-01.azurewebsites.net",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  withCredentials: true,
 });
 
+axiosApi.interceptors.request.use((config: any) => {
+  if (config.data instanceof FormData) {
+    delete config.headers["Content-Type"];
+    return config;
+  }
 
+  config.headers["Content-Type"] = "application/json";
+  return config;
+});
 
 // auto token refresh
 
 // /protected-resource -> 401
 // /refresh -> authenthicated state
 // /protected-resource
-
 
 // axiosApi.interceptors.response.use(
 //     (config:any) => config,
@@ -59,6 +57,5 @@ axiosApi.interceptors.request.use((config: any) => {
 //         throw error;
 //     }
 // );
-
 
 export default axiosApi;
